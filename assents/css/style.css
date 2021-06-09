@@ -1,0 +1,208 @@
+/*FONT AWESOME*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+/*GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Oswald:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+
+/*RESET CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: #333;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 16px;
+}
+
+/*DECLARANDO VARIAVEIS PARA AS FONTS*/
+:root{
+    --font-primaria: "Kanit", serif;
+    --font-secundaria: "Oswald", serif;
+    --font-padrao: "Roboto", serif;
+}
+
+/*HEADER*/
+.home{
+    width: 100%;
+    height: 100vh;
+    background: #272727;
+}
+.header-content{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+.header-content h1{
+    color: #fff;
+    font-family: var(--font-secundaria);
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-shadow: .2rem .2rem 3px #000;
+    animation: mooveUp 1s .4s forwards;
+    opacity: 0;
+}
+.header-content span{
+    color: rgb(231, 62, 0);
+    font-size: 4rem;
+}
+.header-content p{
+    color: #fff;
+    font-family: var(--font-secundaria);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-shadow: .2rem .2rem 3px #000;
+    letter-spacing: 2px;
+    animation: mooveUp 1s .7s forwards;
+    opacity: 0;
+}
+.saiba-mais{
+    font-family: var(--font-padrao);
+    padding: .6rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    background: transparent;
+    color: #fff;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: all .3s;
+    animation: mooveUp 1s .9s forwards;
+    opacity: 0;
+}
+.saiba-mais:hover{
+    background: #fff;
+    color: #272727;
+    border: 2px solid #fff;
+}
+
+/*ANIMACAO DA HEADER*/
+@keyframes mooveUp {
+    0%{
+        transform: translateY(10rem) rotateY(30deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+/*SESSAO TRABALHO*/
+.trabalho{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trabalho h2{
+    font-family: var(--font-primaria);
+    margin-bottom: .3rem;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+.trabalho hr{
+    width: 90px;
+    height: 4px;
+    background-color: #333;
+}
+.trabalho-content{
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*ARTCILES*/
+.trabalhos{
+    width: 30%;
+    margin: 1%;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0, .2);
+    transition: all .3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.trabalhos:hover{
+    box-shadow: .2rem .2rem 4px #4b4b4b;
+}
+.trabalhos h4{
+    font-family: var(--font-secundaria);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.trabalhos p{
+    line-height: 1.8rem;
+    font-family: var(--font-padrao);
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.btn-trabalho{
+    font-family: var(--font-padrao);
+    font-size: 1rem;
+    align-self: center;
+    border: 1px solid rgba(0,0,0, .2);
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    opacity: 0;
+    transition: all .3s;
+    font-weight: 900;
+}
+.trabalhos:hover .btn-trabalho{
+    opacity: 1;
+}
+.btn-trabalho:hover{
+    box-shadow: .2rem .2rem 2px #4b4b4b;
+}
+
+.btn-topo{
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 35px;
+    height: 35px;
+    background-color: #272727;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+.btn-topo i{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/*RESPONSIVIDADE PARA TELAS PEQUENAS*/
+@media screen and (max-width: 820px){
+    .header-content{
+        top: 20%;
+    }
+    .header-content h1{
+        font-size: 3rem;
+    }
+    .header-content span{
+        font-size: 3rem;
+    }
+    .trabalho-content{
+        flex-direction: column;
+    }
+    .trabalhos{
+        width: 100%;
+        margin: 4% 0;
+    }
+    .btn-trabalho{
+        opacity: 1;
+    }
+}
