@@ -282,7 +282,7 @@ nav{
     font-weight: 900;
     box-shadow: .2rem .2rem 2px #4b4b4b;
 }
-.trabalhos:hover .btn-trabalho:hover{
+.trabalhos:hover{
     transform: translateY(-5px);
 }
 .trabalhos:hover .btn-trabalho{
