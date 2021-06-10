@@ -16,6 +16,12 @@ function btnSubir(){
     }
 }
 
+//EVENTO PRELOADER
+const loader = document.querySelector(".preloader");
+window.addEventListener("load", function(){
+    loader.style.display = "none";
+});
+
 //MENU HAMBURGUER
 document.querySelector(".menu-hamburguer").addEventListener("click", function(){
     this.classList.toggle("click");
