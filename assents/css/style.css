@@ -13,6 +13,7 @@
     border: none;
     outline: none;
     color: #333;
+    list-style: none;
 }
 html{
     scroll-behavior: smooth;
@@ -56,6 +57,7 @@ body{
     animation: spin 1.5s infinite;
 
 }
+
 /*ANIMACAO PRELOADER*/
 @keyframes spin{
     0%{
@@ -68,11 +70,12 @@ body{
 
 /*MENU HAMBURGUER*/
 .menu-hamburguer{
-    position: absolute;
-    top: 7%;
+    position: fixed;
+    top: 5%;
     right: 3%;
     cursor: pointer;
-    
+    z-index: 999;
+    transition: all .3s;
 }
 .bar{
     width: 35px;
@@ -90,16 +93,60 @@ body{
 }
 
 /*MENU HAMBURGUER ACTIONS*/
+.click{
+    right: 20%;
+}
 .click #bar2{
     opacity: 0;
 }
 .click #bar1{
     transform: translateY(2px) rotateZ(-45deg);
     box-shadow: none;
+    background-color: rgb(214, 65, 10);
 }
 .click #bar3{
     transform: translateY(-6px) rotateZ(45deg);
     box-shadow: none;
+    background-color: rgb(214, 65, 10);
+}
+
+/*MENU*/
+nav{
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -25rem;
+    z-index: 222;
+    background-color: #fff;
+    transition: all .5s;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+}
+.menu .item{
+    margin-bottom: 2rem;
+    font-family: var(--font-secundaria);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+.item:last-child{
+    margin-bottom: 0rem;
+}
+.item a:hover{
+    color: orangered;
+}
+
+/*MENU ACTIONS*/
+.mostrar-menu{
+    right: 0;
 }
 
 /*HEADER*/
@@ -159,7 +206,7 @@ body{
     border: 2px solid #fff;
 }
 
-/*ANIMACAO DA HEADER*/
+/*ANIMACAO DO HEADER*/
 @keyframes mooveUp {
     0%{
         transform: translateY(10rem) rotateY(30deg);
@@ -197,16 +244,16 @@ body{
     justify-content: center;
 }
 
-/*ARTCILES*/
+/*ARTICLES*/
 .trabalhos{
     width: 30%;
     margin: 1%;
     padding: 1rem;
     border: 1px solid rgba(0,0,0, .2);
-    transition: all .3s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    transition: all .5s;
 }
 .trabalhos:hover{
     box-shadow: .2rem .2rem 4px #4b4b4b;
@@ -233,14 +280,17 @@ body{
     opacity: 0;
     transition: all .3s;
     font-weight: 900;
+    box-shadow: .2rem .2rem 2px #4b4b4b;
+}
+.trabalhos:hover .btn-trabalho:hover{
+    transform: translateY(-5px);
 }
 .trabalhos:hover .btn-trabalho{
     opacity: 1;
 }
 .btn-trabalho:hover{
-    box-shadow: .2rem .2rem 2px #4b4b4b;
+    transform: translateY(-2px);
 }
-
 .btn-topo{
     position: fixed;
     bottom: 2%;
@@ -278,5 +328,11 @@ body{
     }
     .btn-trabalho{
         opacity: 1;
+    }
+    nav{
+        width: 40%;
+    }
+    .click{
+        right: 30%;
     }
 }

@@ -25,4 +25,5 @@ window.addEventListener("load", function(){
 //MENU HAMBURGUER
 document.querySelector(".menu-hamburguer").addEventListener("click", function(){
     this.classList.toggle("click");
+    document.querySelector("nav").classList.toggle("mostrar-menu");
 });
