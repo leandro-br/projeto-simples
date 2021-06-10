@@ -15,3 +15,8 @@ function btnSubir(){
         btn.style.display = "none";
     }
 }
+
+//MENU HAMBURGUER
+document.querySelector(".menu-hamburguer").addEventListener("click", function(){
+    this.classList.toggle("click");
+});

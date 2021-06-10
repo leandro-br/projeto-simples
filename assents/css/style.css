@@ -28,6 +28,42 @@ body{
     --font-padrao: "Roboto", serif;
 }
 
+/*MENU HAMBURGUER*/
+.menu-hamburguer{
+    position: absolute;
+    top: 7%;
+    right: 3%;
+    cursor: pointer;
+    
+}
+.bar{
+    width: 35px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: .2rem .2rem 3px #000;
+    transition: all .4s;
+}
+#bar1{
+    transform: translateY(-5px);
+}
+#bar3{
+    transform: translateY(5px);
+}
+
+/*MENU HAMBURGUER ACTIONS*/
+.click #bar2{
+    opacity: 0;
+}
+.click #bar1{
+    transform: translateY(2px) rotateZ(-45deg);
+    box-shadow: none;
+}
+.click #bar3{
+    transform: translateY(-6px) rotateZ(45deg);
+    box-shadow: none;
+}
+
 /*HEADER*/
 .home{
     width: 100%;
